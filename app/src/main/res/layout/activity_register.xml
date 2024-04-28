@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/earth"
+        android:scaleType="centerCrop"
+        />
+
+    <!-- Registration Form -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:padding="20dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/head"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Name"
+            android:textColor="@color/white"
+            >
+        </EditText>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@android:drawable/ic_dialog_email"
+            android:text="Email *"
+            android:textColor="@color/white">
+            <!--android:drawableTint="@color/colorPrimaryDark"-->
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/pswd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+            android:text="Password *"
+            android:textColor="@color/white">
+        </EditText>
+
+        <EditText
+            android:id="@+id/pswd1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+            android:text="Confirm Password"
+            android:textColor="@color/white">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Register"
+            android:textColor="@color/white"
+            android:textSize="20sp">
+        </Button>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
