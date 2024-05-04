@@ -32,8 +32,8 @@ public class Score extends AppCompatActivity {
         blogout = findViewById(R.id.logout_button);
         Intent i1=getIntent();
         score = i1.getIntExtra("score", 0);
-        tvscore.setText(score * 100 / 5 + "%");
-        pd.setProgress(score * 100 / 5);
+        tvscore.setText(score * 20 +"%");
+        pd.setProgress(score * 20 );
 
         btry.setOnClickListener(new View.OnClickListener() {
             @Override

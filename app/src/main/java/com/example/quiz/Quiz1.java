@@ -50,7 +50,7 @@ public class Quiz1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(rg.getCheckedRadioButtonId()==-1){
-                    Toast.makeText(getApplicationContext(),"please ....",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"please choose your answer",Toast.LENGTH_SHORT).show();
 
                 }else{
                     rb=findViewById(rg.getCheckedRadioButtonId());

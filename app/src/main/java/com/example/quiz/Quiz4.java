@@ -40,7 +40,7 @@ public class Quiz4 extends AppCompatActivity {
         Next=findViewById(R.id.next_button);
         ///////////
         Intent i1=getIntent();
-        Score= i1.getIntExtra("Score",0);
+        Score= i1.getIntExtra("score",0);
         ////////////
         /////timer
         timerTextView = findViewById(R.id.timer_text_view); // Assuming you have a TextView to display the timer
@@ -54,7 +54,7 @@ public class Quiz4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(rg.getCheckedRadioButtonId()==-1){
-                    Toast.makeText(getApplicationContext(),"please ....",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"please choose your answer",Toast.LENGTH_SHORT).show();
 
                 }else{
                     rb=findViewById(rg.getCheckedRadioButtonId());
