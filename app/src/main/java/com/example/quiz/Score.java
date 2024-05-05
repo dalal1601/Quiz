@@ -104,7 +104,7 @@ public class Score extends AppCompatActivity {
     // Display a basic leaderboard (dummy data or data from local storage)
     // Display leaderboard from Firebase
     private void displayLeaderboard(final TextView tvLeaderboard) {
-        usersRef.orderByChild("score").limitToLast(10).addListenerForSingleValueEvent(new ValueEventListener() {
+        usersRef.orderByChild("score").limitToLast(5).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 StringBuilder leaderboardText = new StringBuilder("Leaderboard:\n");
@@ -115,13 +115,11 @@ public class Score extends AppCompatActivity {
                 }
                 Collections.reverse(userSnapshots);
                 for (DataSnapshot snapshot : userSnapshots) {
-                    String userId = snapshot.getKey(); // Get the user's UID /// whyyy!
+                    String userId = snapshot.getKey();
                     int userScore = snapshot.child("score").getValue(Integer.class);
+                    String userName = snapshot.child("name").getValue(String.class); // Get the user's name
 
-                    // Assuming you have a child node 'email' under each user in your database
-                    String email = snapshot.child("email").getValue(String.class);
-
-                    leaderboardText.append(rank).append(". ").append(email).append(" - ").append(userScore).append("%\n");
+                    leaderboardText.append(rank).append(". ").append(userName).append(" - ").append(userScore).append("%\n");
                     rank++;
                 }
                 tvLeaderboard.setText(leaderboardText.toString());
@@ -135,6 +133,7 @@ public class Score extends AppCompatActivity {
             }
         });
     }
+
 
     private void setProgressBar(int progress) {
         ProgressBar progressBar = findViewById(R.id.progressBar);
