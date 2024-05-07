@@ -32,7 +32,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:drawableLeft="@android:drawable/ic_dialog_email"
-            android:hint="Email"
+            android:hint=" Email"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             />
@@ -44,7 +44,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:drawableLeft="@android:drawable/ic_lock_idle_lock"
-            android:hint="Password"
+            android:hint=" Password"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:inputType="textPassword"
