@@ -46,7 +46,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
             android:textColor="@android:color/white"
-            android:text="Which constellation contains the North Star (Polaris)?"/>
+            />
 
         <RadioGroup
             android:id="@+id/radio_group_choices"
@@ -59,28 +59,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="Ursa Major"/>
+                />
 
             <RadioButton
                 android:id="@+id/choice2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="Orion"/>
+                />
 
             <RadioButton
                 android:id="@+id/choice3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="Cassiopeia"/>
+                />
 
             <RadioButton
                 android:id="@+id/choice4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="Ursa Minor"/>
+                />
         </RadioGroup>
 
         <Button

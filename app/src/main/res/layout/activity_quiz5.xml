@@ -46,7 +46,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:textColor="@android:color/white"
-            android:text="What causes the phenomenon known as a solar eclipse?"/>
+            />
 
         <RadioGroup
             android:id="@+id/radio_group_choices"
@@ -59,28 +59,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="The Earth passing between the Sun and the Moon"/>
+                />
 
             <RadioButton
                 android:id="@+id/choice2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="The Moon passing between the Sun and the Earth"/>
+                />
 
             <RadioButton
                 android:id="@+id/choice3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="The Sun passing between the Earth and the Moon"/>
+                />
 
             <RadioButton
                 android:id="@+id/choice4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="The alignment of planets in the solar system"/>
+                />
         </RadioGroup>
 
         <Button

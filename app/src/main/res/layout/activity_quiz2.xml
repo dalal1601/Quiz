@@ -47,7 +47,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:textColor="@android:color/white"
-            android:text="Which planet is known as the 'Red Planet?'"/>
+            />
 
         <RadioGroup
             android:id="@+id/radio_group_choices"
@@ -60,28 +60,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="Jupiter"/>
+                />
 
             <RadioButton
                 android:id="@+id/choice2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="Venus"/>
+                />
 
             <RadioButton
                 android:id="@+id/choice3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="Mars"/>
+                />
 
             <RadioButton
                 android:id="@+id/choice4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="Saturn"/>
+                />
         </RadioGroup>
 
         <Button

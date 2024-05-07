@@ -3,6 +3,7 @@ package com.example.quiz;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -15,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Quiz2 extends AppCompatActivity {
 
@@ -30,6 +33,11 @@ public class Quiz2 extends AppCompatActivity {
     private Runnable timerRunnable;
     private TextView timerTextView;
     private int remainingTime = TOTAL_TIME;
+
+    private FirebaseFirestore db;
+    private String correctAnswer;
+    private TextView questionText;
+    private RadioButton radioA, radioB, radioC, radioD;
 
 
     @Override
@@ -48,8 +56,49 @@ public class Quiz2 extends AppCompatActivity {
         // Initialize handler
         handler = new Handler();
 
+        // Initialize the views for question and options
+        questionText = findViewById(R.id.question_text);
+        radioA = findViewById(R.id.choice1);
+        radioB = findViewById(R.id.choice2);
+        radioC = findViewById(R.id.choice3);
+        radioD = findViewById(R.id.choice4);
+
         // Start the timer
         startTimer();
+
+        db = FirebaseFirestore.getInstance();
+
+        db.collection("question").document("quiz2")
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        String question = documentSnapshot.getString("question");
+                        String optionA = documentSnapshot.getString("option1");
+                        String optionB = documentSnapshot.getString("option2");
+                        String optionC = documentSnapshot.getString("option3");
+                        String optionD = documentSnapshot.getString("option4");
+                        correctAnswer = documentSnapshot.getString("correct_answer");
+
+                        questionText.setText(question);
+                        radioA.setText(optionA);
+                        radioB.setText(optionB);
+                        radioC.setText(optionC);
+                        radioD.setText(optionD);
+
+                        // Log the data
+                        Log.d("Question1", "Question: " + question);
+                        Log.d("Question1", "Option A: " + optionA);
+                        Log.d("Question1", "Option B: " + optionB);
+                        Log.d("Question1", "Option C: " + optionC);
+                        Log.d("Question1", "Option D: " + optionD);
+                        Log.d("Question1", "Correct Answer: " + correctAnswer);
+                    } else {
+                        Log.d("Question2", "No such document");
+                        Toast.makeText(getApplicationContext(), "No such document", Toast.LENGTH_SHORT).show();
+                    }
+                })
+        ;
+
         Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
